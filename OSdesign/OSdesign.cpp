@@ -6,11 +6,14 @@
 #include "OSdesign.h"
 #include "OSdesignDlg.h"
 #include "INITDlg.h"
+#include "DLG2.h"
+#include "DLG3.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
+int pro_num,res_num,res[10],pro[10][10];
 
 // COSdesignApp
 
@@ -49,9 +52,19 @@ BOOL COSdesignApp::InitInstance()
 	// 公共控件类。
 	InitCtrls.dwICC = ICC_WIN95_CLASSES;
 	InitCommonControlsEx(&InitCtrls);
+	memset(res,0,sizeof(res));
+	memset(pro,0,sizeof(pro));
 
-	CINITDlg D;
-	D.DoModal();
+	CINITDlg D1;
+	D1.DoModal();
+	res_num=_ttoi(D1.get_res());
+	pro_num=_ttoi(D1.get_pro());
+	
+	CDLG2 D2;
+	D2.DoModal();
+	
+	CDLG3 D3;
+	D3.DoModal();
 
 	CWinApp::InitInstance();
 

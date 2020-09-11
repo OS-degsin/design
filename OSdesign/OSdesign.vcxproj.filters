@@ -36,6 +36,12 @@
     <ClInclude Include="INITDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DLG2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DLG3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OSdesign.cpp">
@@ -48,6 +54,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="INITDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DLG2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DLG3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

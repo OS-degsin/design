@@ -33,7 +33,7 @@ void CINITDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CINITDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON1, &CINITDlg::OnBnClickedButton1)
-	ON_BN_CLICKED(IDC_BUTTON2, &CINITDlg::OnBnClickedButton2)
+	// ON_BN_CLICKED(IDC_BUTTON2, &CINITDlg::OnBnClickedButton2)
 	ON_WM_CLOSE()
 END_MESSAGE_MAP()
 
@@ -44,13 +44,14 @@ END_MESSAGE_MAP()
 void CINITDlg::OnBnClickedButton1()
 {
 	// TODO: 在此添加控件通知处理程序代码
-			UpdateData(TRUE);
+		UpdateData(TRUE);
+
 		if(pro.IsEmpty()||res.IsEmpty()){
 			MessageBox(TEXT("输入内容不能为空"));
 			return;
 		}
-		int num1=_ttoi(pro),num2=_ttoi(res);
-		if(num1<0 || num1>10 || num2<0 || num2>10){
+		int num_pro=_ttoi(pro),num_res=_ttoi(res);
+		if(num_pro<0 || num_pro>10 || num_res<0 || num_res>10){
 			MessageBox(TEXT("输入范围应为1-10"));
 			return;
 		}
@@ -60,11 +61,6 @@ void CINITDlg::OnBnClickedButton1()
 }
 
 
-void CINITDlg::OnBnClickedButton2()
-{
-	// TODO: 在此添加控件通知处理程序代码
-	exit(0);
-}
 
 
 void CINITDlg::OnCancel()

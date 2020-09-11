@@ -27,4 +27,10 @@ public:
 	virtual void OnCancel();
 	virtual void OnOK();
 	afx_msg void OnClose();
+	CString get_pro(){
+		return pro;
+	}
+	CString get_res(){
+		return res;
+	}
 };
