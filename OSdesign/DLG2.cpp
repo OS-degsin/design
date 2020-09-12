@@ -7,8 +7,7 @@
 #include "afxdialogex.h"
 #include "INITDlg.h"
 #include "afxwin.h"
-extern int res_num,available[10];
-
+#include "global.h"
 // CDLG2 对话框
 
 IMPLEMENT_DYNAMIC(CDLG2, CDialogEx)
@@ -53,7 +52,7 @@ void CDLG2::OnBnClickedButton2()
 	UpdateData(TRUE);
 
 	for(int i=0;i<res_num;i++){
-		if(available[i]==0) {
+		if(m_state->resource[i]==0) {
 			MessageBox(TEXT("资源未设置完全"));
 			return;
 		}
@@ -154,12 +153,12 @@ void CDLG2::OnBnClickedButton1()
 	}
 	//更新
 	int i=cbx_1.GetCurSel();
-	available[i]=n;
+	m_state->resource[i]=n;
 	char a[2];
 	a[0]='A'+i;
 	a[1]='\0';
 	CString str1(a),str2,str3,str4;
-	str2.Format(_T("%d"),available[i]);
+	str2.Format(_T("%d"),m_state->resource[i]);
 	edit_2.GetWindowTextW(str3);
 	str4=TEXT("资源")+str1+TEXT("设置为")+str2+TEXT("个\r\n");
 	str3+=str4;

@@ -5,9 +5,8 @@
 #include "OSdesign.h"
 #include "DLG3.h"
 #include "afxdialogex.h"
- 
-extern int res_num,pro_num,max[10][10],available[10];
-int c_available[10];
+#include "global.h"
+
 
 // CDLG3 对话框
 
@@ -58,7 +57,7 @@ void CDLG3::OnBnClickedButton2()
 	for(int i=0;i<pro_num;i++){
 		int sum=0;
 		for(int j=0;j<res_num;j++){
-			sum+=max[i][j];
+			sum+=m_state->max[i][j];
 		}
 		if(sum==0){
 			MessageBox(TEXT("存在进程未被分配资源"));
@@ -109,20 +108,20 @@ void CDLG3::OnBnClickedButton1()
 	//判断资源数量是否越界
 	int n=_ttoi(edit_1);
 	int i=cbx_1.GetCurSel(),j=cbx_2.GetCurSel();
-	if(c_available[j]<n){
+	if(m_state->resource[j]<n){
 		CString str;
-		str.Format(_T("%d"),c_available[j]);
+		str.Format(_T("%d"),m_state->resource[j]);
 		MessageBox(TEXT("非法设置，该资源总量为")+str);
 		return;
 	}
 	//更新
-	max[i][j]=n;
+	m_state->max[i][j]=n;
 	char a[2],b[2];
 	a[0]='1'+i;
 	b[0]='A'+j;
 	b[1]=a[1]='\0';
 	CString str1(a),str2(b),str3,str4,str5;
-	str3.Format(_T("%d"),max[i][j]);
+	str3.Format(_T("%d"),m_state->max[i][j]);
 	edit_2.GetWindowTextW(str4);
 	str5=TEXT("进程")+str1+TEXT("需要")+str2+TEXT("资源")+str3+TEXT("个\r\n");
 	str4+=str5;
@@ -145,8 +144,6 @@ BOOL CDLG3::OnInitDialog()
 	//return TRUE;  // return TRUE unless you set the focus to a control
 //#5313
 	// TODO:  在此添加额外的初始化
-	//复制res数组
-	memcpy(c_available,available,10*sizeof(int));
 	//初始化进程下拉框
 	char a[2];
 	a[0]='1';

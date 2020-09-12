@@ -1,2 +1,86 @@
-﻿  OSdesign.cpp
-  OSdesign.vcxproj -> C:\Users\10147\Desktop\temp_os\design\Debug\OSdesign.exe
+﻿生成启动时间为 2020/9/12 21:26:18。
+     1>项目“C:\Users\45477\Desktop\design\OSdesign\OSdesign.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\VS2012\VC\bin\CL.exe /c /I"C:\Program Files (x86)\IntelSWTools\system_studio_2020\OpenCL\sdk\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\OSdesign.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt OSdesign.cpp OSdesignDlg.cpp
+         OSdesignDlg.cpp
+     1>c:\users\45477\desktop\design\osdesign\resource.h(40): warning C4005: “CREATEPROCESS_MANIFEST_RESOURCE_ID”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(254) : 参见“CREATEPROCESS_MANIFEST_RESOURCE_ID”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(41): warning C4005: “MINIMUM_RESERVED_MANIFEST_RESOURCE_ID”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(257) : 参见“MINIMUM_RESERVED_MANIFEST_RESOURCE_ID”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(224): warning C4005: “ISOLATIONAWARE_MANIFEST_RESOURCE_ID”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(255) : 参见“ISOLATIONAWARE_MANIFEST_RESOURCE_ID”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(312): warning C4005: “ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(256) : 参见“ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(539): warning C4005: “MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(258) : 参见“MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(602): warning C4005: “RT_MANIFEST”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(253) : 参见“RT_MANIFEST”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1484): warning C4005: “IDI_APPLICATION”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10418) : 参见“IDI_APPLICATION”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1487): warning C4005: “IDI_HAND”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10419) : 参见“IDI_HAND”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1490): warning C4005: “IDI_QUESTION”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10420) : 参见“IDI_QUESTION”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1493): warning C4005: “IDI_EXCLAMATION”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10421) : 参见“IDI_EXCLAMATION”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1496): warning C4005: “IDI_ASTERISK”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10422) : 参见“IDI_ASTERISK”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1498): warning C4005: “IDI_WINLOGO”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10424) : 参见“IDI_WINLOGO”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1500): warning C4005: “IDI_SHIELD”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10427) : 参见“IDI_SHIELD”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1575): warning C4005: “HTERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(2450) : 参见“HTERROR”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1577): warning C4005: “PWR_FAIL”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(1977) : 参见“PWR_FAIL”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1578): warning C4005: “HTTRANSPARENT”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(2451) : 参见“HTTRANSPARENT”的前一个定义
+         OSdesign.cpp
+     1>c:\users\45477\desktop\design\osdesign\resource.h(40): warning C4005: “CREATEPROCESS_MANIFEST_RESOURCE_ID”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(254) : 参见“CREATEPROCESS_MANIFEST_RESOURCE_ID”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(41): warning C4005: “MINIMUM_RESERVED_MANIFEST_RESOURCE_ID”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(257) : 参见“MINIMUM_RESERVED_MANIFEST_RESOURCE_ID”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(224): warning C4005: “ISOLATIONAWARE_MANIFEST_RESOURCE_ID”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(255) : 参见“ISOLATIONAWARE_MANIFEST_RESOURCE_ID”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(312): warning C4005: “ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(256) : 参见“ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(539): warning C4005: “MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(258) : 参见“MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(602): warning C4005: “RT_MANIFEST”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(253) : 参见“RT_MANIFEST”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1484): warning C4005: “IDI_APPLICATION”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10418) : 参见“IDI_APPLICATION”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1487): warning C4005: “IDI_HAND”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10419) : 参见“IDI_HAND”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1490): warning C4005: “IDI_QUESTION”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10420) : 参见“IDI_QUESTION”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1493): warning C4005: “IDI_EXCLAMATION”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10421) : 参见“IDI_EXCLAMATION”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1496): warning C4005: “IDI_ASTERISK”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10422) : 参见“IDI_ASTERISK”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1498): warning C4005: “IDI_WINLOGO”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10424) : 参见“IDI_WINLOGO”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1500): warning C4005: “IDI_SHIELD”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(10427) : 参见“IDI_SHIELD”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1575): warning C4005: “HTERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(2450) : 参见“HTERROR”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1577): warning C4005: “PWR_FAIL”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(1977) : 参见“PWR_FAIL”的前一个定义
+     1>c:\users\45477\desktop\design\osdesign\resource.h(1578): warning C4005: “HTTRANSPARENT”: 宏重定义
+                 c:\program files (x86)\windows kits\8.0\include\um\winuser.h(2451) : 参见“HTTRANSPARENT”的前一个定义
+         正在生成代码...
+       Link:
+         D:\VS2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\45477\Desktop\design\Debug\OSdesign.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\IntelSWTools\system_studio_2020\OpenCL\sdk\lib\x86" OpenCL.lib opencv_ml249d.lib opencv_calib3d249d.lib opencv_contrib249d.lib opencv_core249d.lib opencv_features2d249d.lib opencv_flann249d.lib opencv_gpu249d.lib opencv_highgui249d.lib opencv_imgproc249d.lib opencv_legacy249d.lib opencv_objdetect249d.lib opencv_ts249d.lib opencv_video249d.lib opencv_nonfree249d.lib opencv_ocl249d.lib opencv_photo249d.lib opencv_stitching249d.lib opencv_superres249d.lib opencv_videostab249d.lib opencv_objdetect249.lib opencv_ts249.lib opencv_video249.lib opencv_nonfree249.lib opencv_ocl249.lib opencv_photo249.lib opencv_stitching249.lib opencv_superres249.lib opencv_videostab249.lib opencv_calib3d249.lib opencv_contrib249.lib opencv_core249.lib opencv_features2d249.lib opencv_flann249.lib opencv_gpu249.lib opencv_highgui249.lib opencv_imgproc249.lib opencv_legacy249.lib opencv_ml249.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:D:\VS2012\VC\Include\Manifest\dpiaware.manifest /DEBUG /PDB:"C:\Users\45477\Desktop\design\Debug\OSdesign.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\45477\Desktop\design\Debug\OSdesign.lib" /MACHINE:X86 Debug\OSdesign.res
+         Debug\DLG2.obj
+         Debug\DLG3.obj
+         Debug\global.obj
+         Debug\INITDlg.obj
+         Debug\OSdesign.obj
+         Debug\OSdesignDlg.obj
+         Debug\stdafx.obj
+         OSdesign.vcxproj -> C:\Users\45477\Desktop\design\Debug\OSdesign.exe
+     1>已完成生成项目“C:\Users\45477\Desktop\design\OSdesign\OSdesign.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.15

@@ -13,7 +13,8 @@
 #include <iterator>
 #include <iostream>
 #include <queue>
-#define maxn 10
+#include <stack>
+#define  maxn 10
 
 // COSdesignApp:
 // 有关此类的实现，请参阅 OSdesign.cpp
@@ -35,5 +36,3 @@ public:
 
 extern COSdesignApp theApp;
 
-void updateNeed(int tempNeed[][maxn], int tempMax[][maxn], int tempAllocation[][maxn]);
-bool checSecurity();

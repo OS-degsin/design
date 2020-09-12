@@ -42,6 +42,9 @@
     <ClInclude Include="DLG3.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OSdesign.cpp">
@@ -56,10 +59,13 @@
     <ClCompile Include="INITDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DLG3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="DLG2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="DLG3.cpp">
+    <ClCompile Include="global.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

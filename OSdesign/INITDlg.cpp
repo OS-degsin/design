@@ -5,7 +5,7 @@
 #include "OSdesign.h"
 #include "INITDlg.h"
 #include "afxdialogex.h"
-
+#include "global.h"
 
 // CINITDlg ¶Ô»°¿ò
 

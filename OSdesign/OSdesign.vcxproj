@@ -103,6 +103,7 @@
   <ItemGroup>
     <ClInclude Include="DLG2.h" />
     <ClInclude Include="DLG3.h" />
+    <ClInclude Include="global.h" />
     <ClInclude Include="INITDlg.h" />
     <ClInclude Include="OSdesign.h" />
     <ClInclude Include="OSdesignDlg.h" />
@@ -113,6 +114,10 @@
   <ItemGroup>
     <ClCompile Include="DLG2.cpp" />
     <ClCompile Include="DLG3.cpp" />
+    <ClCompile Include="global.cpp">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </DisableSpecificWarnings>
+    </ClCompile>
     <ClCompile Include="INITDlg.cpp" />
     <ClCompile Include="OSdesign.cpp" />
     <ClCompile Include="OSdesignDlg.cpp" />
