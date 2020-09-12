@@ -13,7 +13,7 @@
 #define new DEBUG_NEW
 #endif
 
-int pro_num,res_num,available[10],max[10][10],allocation[10][10],need[10][10];
+int pro_num,res_num,available[maxn],max[maxn][maxn],allocation[maxn][maxn],need[maxn][maxn];
 
 // COSdesignApp
 
@@ -119,14 +119,71 @@ BOOL COSdesignApp::InitInstance()
 	return FALSE;
 }
 
-void updateNeed() {
-	for (int i = 1; i <= pro_num; i++) {
-		for (int j = 1; j <= res_num; j++) {
-			need[i][j] = max[i][j] - allocation[i][j];
+//该函数不进行安全检测，确认可以更新再调用
+void updateNeed(int tempNeed[][maxn], int tempMax[][maxn], int tempAllocation[][maxn]) {
+	for (int i = 0; i < pro_num; i++) {
+		for (int j = 0; j < res_num; j++) {
+			tempNeed[i][j] = tempMax[i][j] - tempAllocation[i][j];
 		}
 	}
 }
 
-bool checkRequestSecurity(int request[]) {
+//参数说明：进程下标，available向量，need矩阵
+bool checkRequest(int num, int tempAvailable[], int tempNeed[][maxn]) {
+	for (int j = 0; j < res_num; j++) {
+		if (tempAvailable[j] >= tempNeed[num][j])
+			continue;
+		else
+			return false;
+	}
 	return true;
+}
+
+//仅供checkSecurity()调用
+void updateResource(int num, int tempAvailable[], int tempAllocation[][maxn], int tempNeed[][maxn]) {
+	for (int j = 0; j < res_num; j++) 
+		tempAvailable[j] += tempAllocation[num][j];
+	
+	for (int j = 0; j < res_num; j++) 
+		tempNeed[num][j] = 0;
+	
+	for (int j = 0; j < res_num; j++)
+		tempAllocation[num][j] = 0;
+}
+
+//该函数仅仅检查当前状态是否安全，和资源分配无关！
+bool checkSecurity() {
+	//安全序列
+	std::queue<int> safetyQueue;
+
+	//安全标记数组
+	bool safetyMark[maxn]; 
+	memset(safetyMark, false, sizeof(safetyMark));
+
+	//复制当前的资源信息到临时数组
+	int tempNeed[maxn][maxn], tempMax[maxn][maxn], tempAllocation[maxn][maxn], tempAvailable[maxn];
+	memset(tempNeed, 0, sizeof(tempNeed)), memset(tempMax, 0, sizeof(tempMax));
+	memset(tempAllocation, 0, sizeof(tempAllocation)), memset(tempAvailable, 0, sizeof(tempAvailable));
+	memcpy(tempNeed, need, sizeof(need)), memcpy(tempMax, max, sizeof(max));
+	memcpy(tempAllocation, allocation, sizeof(allocation)), memcpy(tempAvailable, available, sizeof(available));
+
+	//若某进程可以加入安全序列，立即加入安全序列（当前加入比以后加入更优）
+	for (int i = 0; i < pro_num; i++) {
+		for (int j = 0; j < pro_num; j++) {
+			if (true == safetyMark[j])
+				continue;
+
+			if (checkRequest(j, tempAvailable, tempNeed)) {
+				safetyQueue.push(j);
+				safetyMark[j] = true;
+				updateResource(j, tempAvailable, tempAllocation, tempNeed);
+			}
+		}
+	}
+	
+	//如果有需要打印安全序列，安全序列就在safetyQueue里。
+	if (safetyQueue.size() == pro_num)
+		return true;
+	else
+		return false;
 }
