@@ -35,5 +35,3 @@ public:
 
 extern COSdesignApp theApp;
 
-void updateNeed(int tempNeed[][maxn], int tempMax[][maxn], int tempAllocation[][maxn]);
-bool checSecurity();
