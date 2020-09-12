@@ -30,3 +30,6 @@ public:
 };
 
 extern COSdesignApp theApp;
+
+void updateNeed();
+bool checkRequestSecurity();

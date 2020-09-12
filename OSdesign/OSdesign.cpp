@@ -13,7 +13,12 @@
 #define new DEBUG_NEW
 #endif
 
+#define maxn 10
+
 int pro_num,res_num,res[10],pro[10][10];
+
+int Max[maxn][maxn], Allocation[maxn][maxn], Need[maxn][maxn];
+int Available[maxn];
 
 // COSdesignApp
 
@@ -117,3 +122,16 @@ BOOL COSdesignApp::InitInstance()
 	return FALSE;
 }
 
+void updateNeed() {
+	for (int i = 1; i <= pro_num; i ++) {
+		for (int j = 1; j <= res_num; j++) {
+			Need[i][j] = Max[i][j] - Allocation[i][j];
+		}
+	}
+}
+
+
+
+bool checkRequestSecurity(int request[]) {
+	
+}
