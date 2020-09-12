@@ -3,6 +3,8 @@
 //
 
 #pragma once
+#include "afxcmn.h"
+#include "afxwin.h"
 
 
 // COSdesignDlg ¶Ô»°¿ò
@@ -32,4 +34,14 @@ protected:
 public:
 	afx_msg void OnStnClickedMfcpropertygrid1();
 	afx_msg void OnBnClickedButton1();
+private:
+	CListCtrl allocation_list;
+	CListCtrl need_list;
+	CListCtrl available_list;
+	CComboBox cbx_1;
+	CComboBox cbx_2;
+	CString edit_1;
+	CEdit edit_4;
+public:
+	afx_msg void OnCbnSelchangeCombo1();
 };

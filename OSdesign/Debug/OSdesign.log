@@ -1,2 +1,8 @@
-﻿  OSdesign.cpp
-c:\users\10147\desktop\temp_os\design\osdesign\osdesign.cpp(135): error C4716: “checkRequestSecurity”: 必须返回一个值
+﻿  stdafx.cpp
+  OSdesignDlg.cpp
+  OSdesign.cpp
+  INITDlg.cpp
+  DLG3.cpp
+  DLG2.cpp
+  正在生成代码...
+  OSdesign.vcxproj -> C:\Users\10147\Desktop\temp_os\design\Debug\OSdesign.exe

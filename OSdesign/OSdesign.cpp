@@ -13,12 +13,7 @@
 #define new DEBUG_NEW
 #endif
 
-#define maxn 10
-
-int pro_num,res_num,res[10],pro[10][10];
-
-int Max[maxn][maxn], Allocation[maxn][maxn], Need[maxn][maxn];
-int Available[maxn];
+int pro_num,res_num,available[10],max[10][10],allocation[10][10],need[10][10];
 
 // COSdesignApp
 
@@ -57,9 +52,9 @@ BOOL COSdesignApp::InitInstance()
 	// 公共控件类。
 	InitCtrls.dwICC = ICC_WIN95_CLASSES;
 	InitCommonControlsEx(&InitCtrls);
-	memset(res,0,sizeof(res));
-	memset(pro,0,sizeof(pro));
-
+	memset(available,0,sizeof(available));
+	memset(max,0,sizeof(max));
+	
 	CINITDlg D1;
 	D1.DoModal();
 	res_num=_ttoi(D1.get_res());
@@ -68,8 +63,10 @@ BOOL COSdesignApp::InitInstance()
 	CDLG2 D2;
 	D2.DoModal();
 	
+
 	CDLG3 D3;
 	D3.DoModal();
+	
 
 	CWinApp::InitInstance();
 
@@ -123,15 +120,13 @@ BOOL COSdesignApp::InitInstance()
 }
 
 void updateNeed() {
-	for (int i = 1; i <= pro_num; i ++) {
+	for (int i = 1; i <= pro_num; i++) {
 		for (int j = 1; j <= res_num; j++) {
-			Need[i][j] = Max[i][j] - Allocation[i][j];
+			need[i][j] = max[i][j] - allocation[i][j];
 		}
 	}
 }
 
-
-
 bool checkRequestSecurity(int request[]) {
-	
+	return true;
 }

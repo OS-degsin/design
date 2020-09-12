@@ -44,14 +44,13 @@ END_MESSAGE_MAP()
 void CINITDlg::OnBnClickedButton1()
 {
 	// TODO: 在此添加控件通知处理程序代码
-		UpdateData(TRUE);
-
+			UpdateData(TRUE);
 		if(pro.IsEmpty()||res.IsEmpty()){
 			MessageBox(TEXT("输入内容不能为空"));
 			return;
 		}
-		int num_pro=_ttoi(pro),num_res=_ttoi(res);
-		if(num_pro<0 || num_pro>10 || num_res<0 || num_res>10){
+		int num1=_ttoi(pro),num2=_ttoi(res);
+		if(num1<0 || num1>10 || num2<0 || num2>10){
 			MessageBox(TEXT("输入范围应为1-10"));
 			return;
 		}

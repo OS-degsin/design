@@ -6,8 +6,8 @@
 #include "DLG2.h"
 #include "afxdialogex.h"
 #include "INITDlg.h"
-
-extern int res_num,res[10];
+#include "afxwin.h"
+extern int res_num,available[10];
 
 // CDLG2 对话框
 
@@ -38,6 +38,7 @@ BEGIN_MESSAGE_MAP(CDLG2, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON2, &CDLG2::OnBnClickedButton2)
 	ON_WM_CLOSE()
 	ON_BN_CLICKED(IDC_BUTTON1, &CDLG2::OnBnClickedButton1)
+	ON_EN_CHANGE(IDC_EDIT2, &CDLG2::OnEnChangeEdit2)
 END_MESSAGE_MAP()
 
 
@@ -50,17 +51,33 @@ void CDLG2::OnBnClickedButton2()
 {
 	// TODO: 在此添加控件通知处理程序代码
 	UpdateData(TRUE);
-	if(cbx_1.GetCurSel() == -1||edit_1.IsEmpty()){
-		MessageBox(TEXT("选项或输入内容不能为空"));
-		return;
-	}
+
 	for(int i=0;i<res_num;i++){
-		if(res[i]==0) {
+		if(available[i]==0) {
 			MessageBox(TEXT("资源未设置完全"));
 			return;
 		}
 	}
+	/*
+	//判断输入是否越界
+	int n=_ttoi(edit_1);
+	//更新
+	int i=cbx_1.GetCurSel();
+	available[i]=n;
+	char a[2];
+	a[0]='A'+i;
+	a[1]='\0';
+	CString str,str1(a),str2,str3,str4;
+	str2.Format(_T("%d"),available[i]);
+	edit_2.GetWindowTextW(str3);
+	str4=TEXT("资源")+str1+TEXT("设置为")+str2+TEXT("个\r\n");
+	//str3+=str4;
+	//edit_2.SetWindowTextW(str3);
+	
+	if(IDOK ==MessageBox(NULL,str3,MB_OKCANCEL))
+	{*/
 		CDialog::OnCancel();
+	//}
 
 }
 
@@ -125,6 +142,10 @@ void CDLG2::OnBnClickedButton1()
 {
 	// TODO: 在此添加控件通知处理程序代码
 	UpdateData(TRUE);
+	if(cbx_1.GetCurSel() == -1||edit_1.IsEmpty()){
+		MessageBox(TEXT("选项或输入内容不能为空"));
+		return;
+	}
 	//判断输入是否越界
 	int n=_ttoi(edit_1);
 	if(n<0 || n>40 ){
@@ -133,14 +154,29 @@ void CDLG2::OnBnClickedButton1()
 	}
 	//更新
 	int i=cbx_1.GetCurSel();
-	res[i]=n;
+	available[i]=n;
 	char a[2];
 	a[0]='A'+i;
 	a[1]='\0';
 	CString str1(a),str2,str3,str4;
-	str2.Format(_T("%d"),res[i]);
+	str2.Format(_T("%d"),available[i]);
 	edit_2.GetWindowTextW(str3);
 	str4=TEXT("资源")+str1+TEXT("设置为")+str2+TEXT("个\r\n");
 	str3+=str4;
 	edit_2.SetWindowTextW(str3);
+
+	
+}
+
+
+void CDLG2::OnEnChangeEdit2()
+{
+	// TODO:  如果该控件是 RICHEDIT 控件，它将不
+	// 发送此通知，除非重写 CDialogEx::OnInitDialog()
+	// 函数并调用 CRichEditCtrl().SetEventMask()，
+	// 同时将 ENM_CHANGE 标志“或”运算到掩码中。
+
+//#1015
+
+	// TODO:  在此添加控件通知处理程序代码
 }

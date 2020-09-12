@@ -32,5 +32,5 @@ public:
 	afx_msg void OnClose();
 	virtual BOOL OnInitDialog();
 	afx_msg void OnBnClickedButton1();
+	afx_msg void OnEnChangeEdit2();
 };
-//

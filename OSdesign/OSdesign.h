@@ -32,4 +32,4 @@ public:
 extern COSdesignApp theApp;
 
 void updateNeed();
-bool checkRequestSecurity();
+bool checkRequestSecurity(int request[]);

@@ -6,8 +6,8 @@
 #include "DLG3.h"
 #include "afxdialogex.h"
  
-extern int res_num,pro_num,pro[10][10],res[10];
-int c_res[10];
+extern int res_num,pro_num,max[10][10],available[10];
+int c_available[10];
 
 // CDLG3 对话框
 
@@ -54,16 +54,11 @@ void CDLG3::OnBnClickedButton2()
 {
 	// TODO: 在此添加控件通知处理程序代码
 	UpdateData(TRUE);
-	//判断是否输入为空
-	if(cbx_1.GetCurSel() == -1||cbx_2.GetCurSel() == -1||edit_1.IsEmpty()){
-		MessageBox(TEXT("选项或输入内容不能为空"));
-		return;
-	}
 	//判断进程是否都被分配资源
 	for(int i=0;i<pro_num;i++){
 		int sum=0;
 		for(int j=0;j<res_num;j++){
-			sum+=pro[i][j];
+			sum+=max[i][j];
 		}
 		if(sum==0){
 			MessageBox(TEXT("存在进程未被分配资源"));
@@ -106,31 +101,28 @@ void CDLG3::OnBnClickedButton1()
 	// TODO: 在此添加控件通知处理程序代码
 	
 	UpdateData(TRUE);
-	//判断资源数量是否越界
-	int n=_ttoi(edit_1);
-	if(n<0 || n>40 ){
-		MessageBox(TEXT("资源数量范围应为1-40"));
+	//判断是否输入为空
+	if(cbx_1.GetCurSel() == -1||cbx_2.GetCurSel() == -1||edit_1.IsEmpty()){
+		MessageBox(TEXT("选项或输入内容不能为空"));
 		return;
 	}
+	//判断资源数量是否越界
+	int n=_ttoi(edit_1);
 	int i=cbx_1.GetCurSel(),j=cbx_2.GetCurSel();
-	//消耗相应资源
-	c_res[j]-=n;
-	//判断资源是否被耗尽
-	if(c_res[j]<0){
+	if(c_available[j]<n){
 		CString str;
-		c_res[j]+=n;
-		str.Format(_T("%d"),c_res[j]);
-		MessageBox(TEXT("非法设置，该资源余量为")+str);
+		str.Format(_T("%d"),c_available[j]);
+		MessageBox(TEXT("非法设置，该资源总量为")+str);
 		return;
 	}
 	//更新
-	pro[i][j]=n;
+	max[i][j]=n;
 	char a[2],b[2];
 	a[0]='1'+i;
 	b[0]='A'+j;
 	b[1]=a[1]='\0';
 	CString str1(a),str2(b),str3,str4,str5;
-	str3.Format(_T("%d"),pro[i][j]);
+	str3.Format(_T("%d"),max[i][j]);
 	edit_2.GetWindowTextW(str4);
 	str5=TEXT("进程")+str1+TEXT("需要")+str2+TEXT("资源")+str3+TEXT("个\r\n");
 	str4+=str5;
@@ -154,7 +146,7 @@ BOOL CDLG3::OnInitDialog()
 //#5313
 	// TODO:  在此添加额外的初始化
 	//复制res数组
-	memcpy(c_res,res,10*sizeof(int));
+	memcpy(c_available,available,10*sizeof(int));
 	//初始化进程下拉框
 	char a[2];
 	a[0]='1';
