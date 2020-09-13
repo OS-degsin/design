@@ -247,7 +247,7 @@ HCURSOR COSdesignDlg::OnQueryDragIcon()
 
 
 //该函数不进行安全检测，确认可以更新再调用
-void updateNeed(int tempNeed[][maxn], int tempMax[][maxn], int tempAllocation[][maxn]) {
+void COSdesignDlg::updateNeed(int tempNeed[][maxn], int tempMax[][maxn], int tempAllocation[][maxn]) {
 	for (int i = 0; i < pro_num; i++) {
 		for (int j = 0; j < res_num; j++) {
 			tempNeed[i][j] = tempMax[i][j] - tempAllocation[i][j];
@@ -256,7 +256,7 @@ void updateNeed(int tempNeed[][maxn], int tempMax[][maxn], int tempAllocation[][
 }
 
 //参数说明：进程下标，available向量，need矩阵
-bool checkRequest(int num, int tempAvailable[], int tempNeed[][maxn]) {
+bool COSdesignDlg::checkRequest(int num, int tempAvailable[], int tempNeed[][maxn]) {
 	for (int j = 0; j < res_num; j++) {
 		if (tempAvailable[j] >= tempNeed[num][j])
 			continue;
@@ -266,8 +266,8 @@ bool checkRequest(int num, int tempAvailable[], int tempNeed[][maxn]) {
 	return true;
 }
 
-//仅供checkSecurity()调用
-void updateResource(int num, int tempAvailable[], int tempAllocation[][maxn], int tempNeed[][maxn]) {
+//仅供checkSecurity()和checkDeadlock()调用
+void COSdesignDlg::updateResource(int num, int tempAvailable[], int tempAllocation[][maxn], int tempNeed[][maxn]) {
 	for (int j = 0; j < res_num; j++) 
 		tempAvailable[j] += tempAllocation[num][j];
 
@@ -283,7 +283,7 @@ void updateResource(int num, int tempAvailable[], int tempAllocation[][maxn], in
 std::queue<int> safetyQueue;
 CString safetystr;
 
-bool checkSecurity() {
+bool COSdesignDlg::checkSecurity() {
 	//安全标记数组
 	bool safetyMark[maxn]; 
 	memset(safetyMark, false, sizeof(safetyMark));
@@ -338,11 +338,10 @@ bool checkSecurity() {
 }
 
 
+bool COSdesignDlg::checkDeadlock() {
+	//解锁序列（若非死锁状态，可按次序列顺序解锁）
+	std::queue<int> unlockQueue;
 
-//解锁序列（若非死锁状态，可按次序列顺序解锁）
-std::queue<int> unlockQueue;
-
-bool checkDeadlock() {
 	//安全标记数组
 	bool safetyMark[maxn];
 	memset(safetyMark, false, sizeof(safetyMark));

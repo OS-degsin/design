@@ -1,4 +1,4 @@
-﻿  OSdesignDlg.cpp
+﻿  OSdesign.cpp
 c:\users\10147\desktop\temp_os\design\osdesign\resource.h(39): warning C4005: “WINAPI_PARTITION_DESKTOP”: 宏重定义
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\winapifamily.h(145): note: 参见“WINAPI_PARTITION_DESKTOP”的前一个定义
 c:\users\10147\desktop\temp_os\design\osdesign\resource.h(40): warning C4005: “CREATEPROCESS_MANIFEST_RESOURCE_ID”: 宏重定义
@@ -37,4 +37,44 @@ c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1577): warning C4005: 
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(2050): note: 参见“PWR_FAIL”的前一个定义
 c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1578): warning C4005: “HTTRANSPARENT”: 宏重定义
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(2542): note: 参见“HTTRANSPARENT”的前一个定义
+  OSdesignDlg.cpp
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(39): warning C4005: “WINAPI_PARTITION_DESKTOP”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\winapifamily.h(145): note: 参见“WINAPI_PARTITION_DESKTOP”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(40): warning C4005: “CREATEPROCESS_MANIFEST_RESOURCE_ID”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(262): note: 参见“CREATEPROCESS_MANIFEST_RESOURCE_ID”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(41): warning C4005: “MINIMUM_RESERVED_MANIFEST_RESOURCE_ID”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(266): note: 参见“MINIMUM_RESERVED_MANIFEST_RESOURCE_ID”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(223): warning C4005: “WINAPI_PARTITION_APP”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\winapifamily.h(152): note: 参见“WINAPI_PARTITION_APP”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(224): warning C4005: “ISOLATIONAWARE_MANIFEST_RESOURCE_ID”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(263): note: 参见“ISOLATIONAWARE_MANIFEST_RESOURCE_ID”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(312): warning C4005: “ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(264): note: 参见“ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(539): warning C4005: “MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(267): note: 参见“MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(602): warning C4005: “RT_MANIFEST”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(261): note: 参见“RT_MANIFEST”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1418): warning C4005: “_WIN32_WINNT”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\sdkddkver.h(216): note: 参见“_WIN32_WINNT”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1484): warning C4005: “IDI_APPLICATION”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(10794): note: 参见“IDI_APPLICATION”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1487): warning C4005: “IDI_HAND”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(10795): note: 参见“IDI_HAND”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1490): warning C4005: “IDI_QUESTION”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(10796): note: 参见“IDI_QUESTION”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1493): warning C4005: “IDI_EXCLAMATION”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(10797): note: 参见“IDI_EXCLAMATION”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1496): warning C4005: “IDI_ASTERISK”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(10798): note: 参见“IDI_ASTERISK”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1498): warning C4005: “IDI_WINLOGO”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(10800): note: 参见“IDI_WINLOGO”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1500): warning C4005: “IDI_SHIELD”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(10803): note: 参见“IDI_SHIELD”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1575): warning C4005: “HTERROR”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(2541): note: 参见“HTERROR”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1577): warning C4005: “PWR_FAIL”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(2050): note: 参见“PWR_FAIL”的前一个定义
+c:\users\10147\desktop\temp_os\design\osdesign\resource.h(1578): warning C4005: “HTTRANSPARENT”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winuser.h(2542): note: 参见“HTTRANSPARENT”的前一个定义
+  正在生成代码...
   OSdesign.vcxproj -> C:\Users\10147\Desktop\temp_os\design\Debug\OSdesign.exe

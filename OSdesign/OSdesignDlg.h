@@ -45,7 +45,8 @@ private:
 public:
 	afx_msg void OnCbnSelchangeCombo1();
 	void updateNeed(int tempNeed[][maxn], int tempMax[][maxn], int tempAllocation[][maxn]);
-	bool checSecurity();
+	bool checkSecurity();
+	bool checkDeadlock();
 	bool checkRequest(int num, int tempAvailable[], int tempNeed[][maxn]);
 	void updateResource(int num, int tempAvailable[], int tempAllocation[][maxn], int tempNeed[][maxn]);
 private:
