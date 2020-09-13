@@ -280,18 +280,26 @@ void updateResource(int num, int tempAvailable[], int tempAllocation[][maxn], in
 
 //该函数仅仅检查当前状态是否安全，和资源分配无关！
 	//安全序列
-	std::queue<int> safetyQueue;
-	CString safetystr;
+std::queue<int> safetyQueue;
+CString safetystr;
+
 bool checkSecurity() {
 	//安全标记数组
 	bool safetyMark[maxn]; 
 	memset(safetyMark, false, sizeof(safetyMark));
+
+	//清空safetyQueue
+	while (safetyQueue.size()) {
+		safetyQueue.pop();
+	}
+
 	//复制当前的资源信息到临时数组
 	int tempNeed[maxn][maxn], tempMax[maxn][maxn], tempAllocation[maxn][maxn], tempAvailable[maxn];
 	memset(tempNeed, 0, sizeof(tempNeed)), memset(tempMax, 0, sizeof(tempMax));
 	memset(tempAllocation, 0, sizeof(tempAllocation)), memset(tempAvailable, 0, sizeof(tempAvailable));
 	memcpy(tempNeed, m_state->need, sizeof(m_state->need)), memcpy(tempMax,m_state->max, sizeof(m_state->max));
 	memcpy(tempAllocation, m_state->allocation, sizeof(m_state->allocation)), memcpy(tempAvailable, m_state->available, sizeof(m_state->available));
+
 	//若某进程可以加入安全序列，立即加入安全序列（当前加入比以后加入更优）
 	for (int i = 0; i < pro_num; i++) {
 		for (int j = 0; j < pro_num; j++) {
@@ -325,6 +333,47 @@ bool checkSecurity() {
 		}
 		return true;
 	}
+	else
+		return false;
+}
+
+
+
+//解锁序列（若非死锁状态，可按次序列顺序解锁）
+std::queue<int> unlockQueue;
+
+bool checkDeadlock() {
+	//安全标记数组
+	bool safetyMark[maxn];
+	memset(safetyMark, false, sizeof(safetyMark));
+
+	//清空unlockQueue
+	while (unlockQueue.size()) {
+		unlockQueue.pop();
+	}
+
+	//复制当前的资源信息到临时数组
+	int tempRequest[maxn][maxn], tempMax[maxn][maxn], tempAllocation[maxn][maxn], tempAvailable[maxn];
+	memset(tempRequest, 0, sizeof(tempRequest)), memset(tempMax, 0, sizeof(tempMax));
+	memset(tempAllocation, 0, sizeof(tempAllocation)), memset(tempAvailable, 0, sizeof(tempAvailable));
+	memcpy(tempRequest, m_state->request, sizeof(m_state->request)), memcpy(tempMax, m_state->max, sizeof(m_state->max));
+	memcpy(tempAllocation, m_state->allocation, sizeof(m_state->allocation)), memcpy(tempAvailable, m_state->available, sizeof(m_state->available));
+
+	//若某进程可以加入安全序列，立即加入安全序列（当前加入比以后加入更优）
+	for (int i = 0; i < pro_num; i++) {
+		for (int j = 0; j < pro_num; j++) {
+			if (true == safetyMark[j])
+				continue;
+			if (checkRequest(j, tempAvailable, tempRequest)) {
+				unlockQueue.push(j);
+				safetyMark[j] = true;
+				updateResource(j, tempAvailable, tempAllocation, tempRequest);
+			}
+		}
+	}
+
+	if (unlockQueue.size() == pro_num)
+		return true;
 	else
 		return false;
 }
