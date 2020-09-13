@@ -46,18 +46,10 @@ public:
 	afx_msg void OnCbnSelchangeCombo1();
 	void updateNeed(int tempNeed[][maxn], int tempMax[][maxn], int tempAllocation[][maxn]);
 	bool checSecurity();
-<<<<<<< HEAD
 	bool checkRequest(int num, int tempAvailable[], int tempNeed[][maxn]);
 	void updateResource(int num, int tempAvailable[], int tempAllocation[][maxn], int tempNeed[][maxn]);
-=======
->>>>>>> 904918085b7251ae124f8cdd323a0f6271bc271a
 private:
 	CEdit edit_2;
-public:
 	CEdit edit_5;
-<<<<<<< HEAD
-private:
 	CEdit edit_6;
-=======
->>>>>>> 904918085b7251ae124f8cdd323a0f6271bc271a
 };

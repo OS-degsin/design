@@ -66,10 +66,7 @@ void COSdesignDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_EDIT4, edit_4);
 	DDX_Control(pDX, IDC_EDIT2, edit_2);
 	DDX_Control(pDX, IDC_EDIT5, edit_5);
-<<<<<<< HEAD
 	DDX_Control(pDX, IDC_EDIT6, edit_6);
-=======
->>>>>>> 904918085b7251ae124f8cdd323a0f6271bc271a
 }
 
 BEGIN_MESSAGE_MAP(COSdesignDlg, CDialogEx)
@@ -121,7 +118,6 @@ BOOL COSdesignDlg::OnInitDialog()
 	memcpy(m_state->available,m_state->resource,sizeof(m_state->resource));
 	// allocation矩阵显示
 	CString str,res,pro;
-<<<<<<< HEAD
 	allocation_list.InsertColumn(0,TEXT(""),LVCFMT_LEFT,60);
 	for (int i=0;i<res_num;i++)
 	{
@@ -134,27 +130,12 @@ BOOL COSdesignDlg::OnInitDialog()
 		for(int j=0;j<res_num;j++){
 			str.Format(_T("%d"),m_state->allocation[i][j]);
 			allocation_list.SetItemText(i,j+1,str);
-=======
-	allocation_list.InsertColumn(0,TEXT(""),LVCFMT_LEFT,50);
-	for (int i=1;i<=pro_num;i++)
-	{
-		str.Format(_T("%d"),i);
-		allocation_list.InsertColumn(i,TEXT("进程")+str,LVCFMT_LEFT,50);
-	}
-	for(int i=0;i<res_num;i++){
-		res.Format(_T("%c"),65+i);
-		allocation_list.InsertItem(i,res);
-		for(int j=1;j<=pro_num;j++){
-			str.Format(_T("%d"),allocation[j-1][i]);
-			allocation_list.SetItemText(i,j,str);
->>>>>>> 904918085b7251ae124f8cdd323a0f6271bc271a
 		}	
 	}
 	// need矩阵显示
 	need_list.InsertColumn(0,TEXT(""),LVCFMT_LEFT,60);
 	for (int i=0;i<res_num;i++)
 	{
-<<<<<<< HEAD
 		str.Format(_T("%c"),i+65);
 		need_list.InsertColumn(i+1,TEXT("资源")+str,LVCFMT_LEFT,60);
 	}
@@ -164,18 +145,7 @@ BOOL COSdesignDlg::OnInitDialog()
 		for(int j=0;j<res_num;j++){
 			str.Format(_T("%d"),m_state->need[i][j]);
 			need_list.SetItemText(i,j+1,str);
-=======
-		str.Format(_T("%d"),i);
-		need_list.InsertColumn(i,TEXT("进程")+str,LVCFMT_LEFT,50);
-	}
-	for(int i=0;i<res_num;i++){
-		res.Format(_T("%c"),65+i);
-		need_list.InsertItem(i,res);
-		for(int j=1;j<=pro_num;j++){
-			str.Format(_T("%d"),max[j-1][i]);
-			need_list.SetItemText(i,j,str);
->>>>>>> 904918085b7251ae124f8cdd323a0f6271bc271a
-		}	
+		}
 	}
 	// available矩阵展示
 	for (int i=0;i<res_num;i++)
@@ -183,17 +153,10 @@ BOOL COSdesignDlg::OnInitDialog()
 		str.Format(_T("%c"),65+i);
 		available_list.InsertColumn(i,TEXT("资源")+str,LVCFMT_LEFT,60);
 	}
-<<<<<<< HEAD
-	str.Format(_T("%d"),m_state->available[0]);
+		str.Format(_T("%d"),m_state->available[0]);
 	available_list.InsertItem(0,str);
 	for(int i=1;i<res_num;i++){
 		str.Format(_T("%d"),m_state->available[i]);
-=======
-	str.Format(_T("%d"),available[0]);
-	available_list.InsertItem(0,str);
-	for(int i=1;i<res_num;i++){
-		str.Format(_T("%d"),available[i]);
->>>>>>> 904918085b7251ae124f8cdd323a0f6271bc271a
 		available_list.SetItemText(0,i,str);
 	}
 	//初始化进程下拉框
@@ -231,6 +194,7 @@ BOOL COSdesignDlg::OnInitDialog()
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
+
 
 void COSdesignDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
@@ -301,24 +265,6 @@ bool checkRequest(int num, int tempAvailable[], int tempNeed[][maxn]) {
 	}
 	return true;
 }
-<<<<<<< HEAD
-
-//仅供checkSecurity()调用
-void updateResource(int num, int tempAvailable[], int tempAllocation[][maxn], int tempNeed[][maxn]) {
-	for (int j = 0; j < res_num; j++) 
-		tempAvailable[j] += tempAllocation[num][j];
-
-	for (int j = 0; j < res_num; j++) 
-		tempNeed[num][j] = 0;
-
-	for (int j = 0; j < res_num; j++)
-		tempAllocation[num][j] = 0;
-}
-	//安全序列
-	std::queue<int> safetyQueue;
-	CString safetystr;
-//该函数仅仅检查当前状态是否安全，和资源分配无关！
-=======
 
 //仅供checkSecurity()调用
 void updateResource(int num, int tempAvailable[], int tempAllocation[][maxn], int tempNeed[][maxn]) {
@@ -336,7 +282,6 @@ void updateResource(int num, int tempAvailable[], int tempAllocation[][maxn], in
 	//安全序列
 	std::queue<int> safetyQueue;
 	CString safetystr;
->>>>>>> 904918085b7251ae124f8cdd323a0f6271bc271a
 bool checkSecurity() {
 	//安全标记数组
 	bool safetyMark[maxn]; 
@@ -345,23 +290,13 @@ bool checkSecurity() {
 	int tempNeed[maxn][maxn], tempMax[maxn][maxn], tempAllocation[maxn][maxn], tempAvailable[maxn];
 	memset(tempNeed, 0, sizeof(tempNeed)), memset(tempMax, 0, sizeof(tempMax));
 	memset(tempAllocation, 0, sizeof(tempAllocation)), memset(tempAvailable, 0, sizeof(tempAvailable));
-<<<<<<< HEAD
 	memcpy(tempNeed, m_state->need, sizeof(m_state->need)), memcpy(tempMax,m_state->max, sizeof(m_state->max));
 	memcpy(tempAllocation, m_state->allocation, sizeof(m_state->allocation)), memcpy(tempAvailable, m_state->available, sizeof(m_state->available));
-=======
-	memcpy(tempNeed, need, sizeof(need)), memcpy(tempMax, max, sizeof(max));
-	memcpy(tempAllocation, allocation, sizeof(allocation)), memcpy(tempAvailable, available, sizeof(available));
->>>>>>> 904918085b7251ae124f8cdd323a0f6271bc271a
-
 	//若某进程可以加入安全序列，立即加入安全序列（当前加入比以后加入更优）
 	for (int i = 0; i < pro_num; i++) {
 		for (int j = 0; j < pro_num; j++) {
 			if (true == safetyMark[j])
 				continue;
-<<<<<<< HEAD
-=======
-
->>>>>>> 904918085b7251ae124f8cdd323a0f6271bc271a
 			if (checkRequest(j, tempAvailable, tempNeed)) {
 				safetyQueue.push(j);
 				safetyMark[j] = true;
@@ -371,10 +306,7 @@ bool checkSecurity() {
 	}
 
 	//如果有需要打印安全序列，安全序列就在safetyQueue里。
-<<<<<<< HEAD
 	safetystr="";
-=======
->>>>>>> 904918085b7251ae124f8cdd323a0f6271bc271a
 	if (safetyQueue.size() == pro_num)
 	{
 		CString pro;
@@ -409,7 +341,6 @@ void COSdesignDlg::OnBnClickedButton1()
 	//判断资源数量是否足够
 	int n=_ttoi(edit_1);
 	int i=cbx_1.GetCurSel(),j=cbx_2.GetCurSel();
-<<<<<<< HEAD
 	 if(m_state->available[j]<n){
 		//搁置申请，放入request数组
 		 MessageBox(TEXT("可用资源不足！"));
@@ -470,56 +401,9 @@ void COSdesignDlg::OnBnClickedButton1()
 			edit_4.GetWindowTextW(str9);
 			edit_4.SetWindowTextW(str9+TEXT("系统进入不安全状态!\r\n"));
 		}
-=======
-	/*  if(available[j]<n){
-		CString str;
-		str.Format(_T("%d"),available[j]);
-		MessageBox(TEXT("非法设置，该资源余量为")+str);
-		return;
-	}*/
-
-	char a[2],b[2];
-	a[0]='1'+i;
-	b[0]='A'+j;
-	b[1]=a[1]='\0';
-	CString str1(a),str2(b),str3,str4,str5;
-	str3.Format(_T("%d"),n);
-	edit_4.GetWindowTextW(str4);
-	str5=TEXT("进程")+str1+TEXT("申请")+str2+TEXT("资源数量为")+str3+TEXT("个\r\n");
-	str4+=str5;
-	edit_4.SetWindowTextW(str4);
-
-
-	//更新allocation矩阵
-	CString str6;
-	allocation[i][j]+=n;
-	str6.Format(_T("%d"),allocation[i][j]);
-	allocation_list.SetItemText(j,i+1,str6);
-
-	//更新need矩阵
-	CString str7;
-	need[i][j]=max[i][j]-allocation[i][j];
-	str7.Format(_T("%d"),need[i][j]);
-	need_list.SetItemText(j,i+1,str7);
-	
-	//更新available资源
-	CString str8;
-	available[j]-=n;
-	str8.Format(_T("%d"),available[j]);
-	available_list.SetItemText(0,j,str8);
-
-	//安全性检测
-	if(checkSecurity()){
-		edit_2.SetWindowTextW(TEXT("安全"));
-		edit_5.SetWindowTextW(safetystr);
-	}
-	else{
-		MessageBox(TEXT("系统将进入不安全状态！"));
-		edit_2.SetWindowTextW(TEXT("不安全"));
-		edit_5.SetWindowTextW(TEXT(""));
->>>>>>> 904918085b7251ae124f8cdd323a0f6271bc271a
 	}
 }
+
 
 
 void COSdesignDlg::OnCbnSelchangeCombo1()
